@@ -1,13 +1,6 @@
-//
-//  ViewController.swift
-//  Messenger
-//
-//  Created by Admin on 25.07.2022.
-//
-
 import UIKit
 
-class ViewController: UIViewController {
+class ConversationsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
