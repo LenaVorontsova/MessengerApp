@@ -19,6 +19,7 @@
 		841E685E288EC41400E91C0E /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E685D288EC41400E91C0E /* VideoPlayerViewController.swift */; };
 		841E6860288EC44700E91C0E /* NewConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E685F288EC44700E91C0E /* NewConversationViewController.swift */; };
 		841E6862288EC47100E91C0E /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E6861288EC47100E91C0E /* ProfileViewController.swift */; };
+		841E6865288FFADE00E91C0E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E6864288FFADE00E91C0E /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		841E685D288EC41400E91C0E /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		841E685F288EC44700E91C0E /* NewConversationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversationViewController.swift; sourceTree = "<group>"; };
 		841E6861288EC47100E91C0E /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		841E6864288FFADE00E91C0E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				841E683D288EBEBD00E91C0E /* AppDelegate.swift */,
 				841E683F288EBEBD00E91C0E /* SceneDelegate.swift */,
+				841E6864288FFADE00E91C0E /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				841E6860288EC44700E91C0E /* NewConversationViewController.swift in Sources */,
 				841E6842288EBEBD00E91C0E /* ConversationsViewController.swift in Sources */,
 				841E685E288EC41400E91C0E /* VideoPlayerViewController.swift in Sources */,
+				841E6865288FFADE00E91C0E /* Extensions.swift in Sources */,
 				841E683E288EBEBD00E91C0E /* AppDelegate.swift in Sources */,
 				841E6862288EC47100E91C0E /* ProfileViewController.swift in Sources */,
 				841E6840288EBEBD00E91C0E /* SceneDelegate.swift in Sources */,
