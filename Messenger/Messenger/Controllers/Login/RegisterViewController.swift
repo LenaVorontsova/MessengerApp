@@ -89,7 +89,8 @@ class RegisterViewController: UIViewController {
     
     private let imageView: UIImageView = { () -> UIImageView in
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "logo")
+        imageView.image = UIImage(systemName: "person")
+        imageView.tintColor = .gray
         imageView.contentMode = .scaleAspectFit
         return imageView
     }()
@@ -105,7 +106,7 @@ class RegisterViewController: UIViewController {
         emailTF.delegate = self
         passwordTF.delegate = self
         
-        // Add subviews 
+        // Add subviews
         view.addSubview(scrollView)
         scrollView.addSubview(firstNameTF)
         scrollView.addSubview(lastNameTF)
@@ -113,6 +114,17 @@ class RegisterViewController: UIViewController {
         scrollView.addSubview(emailTF)
         scrollView.addSubview(passwordTF)
         scrollView.addSubview(registerButton)
+        
+        imageView.isUserInteractionEnabled = true
+        scrollView.isUserInteractionEnabled = true 
+        
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfilePic))
+        gesture.numberOfTapsRequired = 1
+        imageView.addGestureRecognizer(gesture)
+    }
+    
+    @objc private func didTapChangeProfilePic() {
+        print("Change pic called ")
     }
     
     override func viewDidLayoutSubviews() {
@@ -155,9 +167,18 @@ class RegisterViewController: UIViewController {
     @objc private func registerButtonTapped() {
         emailTF.resignFirstResponder()
         passwordTF.resignFirstResponder()
+        firstNameTF.resignFirstResponder()
+        lastNameTF.resignFirstResponder()
         
-        guard let email = emailTF.text, let password = passwordTF.text,
-              !email.isEmpty, !password.isEmpty, password.count >= 6 else {
+        guard let firstName = firstNameTF.text,
+              let lastName = lastNameTF.text,
+              let email = emailTF.text,
+              let password = passwordTF.text,
+              !firstName.isEmpty,
+              !lastName.isEmpty,
+              !email.isEmpty,
+              !password.isEmpty,
+              password.count >= 6 else {
                   alertUserLoginError()
                   return
               }
@@ -168,7 +189,7 @@ class RegisterViewController: UIViewController {
     func alertUserLoginError() {
         let alert = UIAlertController(
             title: "Woops",
-            message: "Please enter all information to log in.",
+            message: "Please enter all information to create a new account. ",
             preferredStyle: .alert)
         alert.addAction(UIAlertAction(
             title: "Dismiss",
