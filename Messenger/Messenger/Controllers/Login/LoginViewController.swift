@@ -30,11 +30,11 @@ class LoginViewController: UIViewController {
         return textField
     }()
     
-    private let passwordTF: UITextField = { 
+    private let passwordTF: UITextField = {
         let textField = UITextField()
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
-        textField.returnKeyType = .continue
+        textField.returnKeyType = .done
         textField.layer.cornerRadius = 12
         textField.layer.borderWidth = 1
         textField.layer.borderColor = UIColor.lightGray.cgColor
@@ -44,6 +44,17 @@ class LoginViewController: UIViewController {
         textField.backgroundColor = .white
         textField.isSecureTextEntry = true
         return textField
+    }()
+    
+    private let logInButton: UIButton = {
+       let button = UIButton()
+        button.setTitle("Log In", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .link
+        button.layer.cornerRadius = 12
+        button.layer.masksToBounds = true
+        button.titleLabel?.font = .systemFont(ofSize: 20, weight: .bold)
+        return button
     }()
     
     private let imageView: UIImageView = { () -> UIImageView in
@@ -70,6 +81,7 @@ class LoginViewController: UIViewController {
         scrollView.addSubview(imageView)
         scrollView.addSubview(emailTF)
         scrollView.addSubview(passwordTF)
+        scrollView.addSubview(logInButton)
     }
     
     override func viewDidLayoutSubviews() {
@@ -90,6 +102,11 @@ class LoginViewController: UIViewController {
         passwordTF.frame = CGRect(
             x: 30,
             y: emailTF.bottom + 10,
+            width: scrollView.width - 60,
+            height: 52)
+        logInButton.frame = CGRect(
+            x: 30,
+            y: passwordTF.bottom + 10,
             width: scrollView.width - 60,
             height: 52)
     }
