@@ -116,7 +116,7 @@ class RegisterViewController: UIViewController {
         scrollView.addSubview(registerButton)
         
         imageView.isUserInteractionEnabled = true
-        scrollView.isUserInteractionEnabled = true 
+        scrollView.isUserInteractionEnabled = true
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfilePic))
         gesture.numberOfTapsRequired = 1
@@ -124,7 +124,7 @@ class RegisterViewController: UIViewController {
     }
     
     @objc private func didTapChangeProfilePic() {
-        print("Change pic called ")
+        pesentPhoroActionSheet()
     }
     
     override func viewDidLayoutSubviews() {
@@ -208,5 +208,41 @@ extension RegisterViewController: UITextFieldDelegate {
             registerButtonTapped()
         }
         return true
+    }
+}
+
+extension RegisterViewController: UIImagePickerControllerDelegate {
+    func pesentPhoroActionSheet() {
+        let actionSheet = UIAlertController(
+            title: "Profile picture",
+            message: "How would you like to select a picture",
+            preferredStyle: .actionSheet)
+        
+        actionSheet.addAction(UIAlertAction(
+            title: "Cancel",
+            style: .cancel,
+            handler: nil))
+        actionSheet.addAction(UIAlertAction(
+            title: "Take Photo",
+            style: .default,
+            handler: { _ in
+                
+            }))
+        actionSheet.addAction(UIAlertAction(
+            title: "Chose photo",
+            style: .default,
+            handler: {_ in
+                
+            }))
+        
+        present(actionSheet, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
     }
 }
